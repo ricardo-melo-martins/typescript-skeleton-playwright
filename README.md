@@ -20,7 +20,18 @@ This is a basic framework, a minimalist template using Typescript. It assists me
 - <a href="https://www.npmjs.com/package/@types/node" target="_blank">@types/node</a> - This package contains type definitions for node (https://nodejs.org/). 
 - <a href="https://playwright.dev/" target="_blank">Playwright</a> enables reliable end-to-end testing for modern web apps.
 
+## Install
 
+Install npm dependencies
+
+```bash
+$ npm i
+```
+
+Install supported browsers for Playwright
+```bash
+$ npx playwright install
+```
 
 ## Package.json
 
