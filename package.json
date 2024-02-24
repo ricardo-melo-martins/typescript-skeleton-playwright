@@ -1,6 +1,6 @@
 {
-  "name": "typescript-skeleton",
-  "displayName": "typescript-skeleton",
+  "name": "typescript-skeleton-playwright",
+  "displayName": "typescript-skeleton-playwright",
   "description": "A minimalistic skeleton template for create other projects",
   "version": "0.0.1",
   "author": "RMM <ricardo-melo-martins@users.noreply.github.com>",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ricardo-melo-martins/typescript-skeleton"
+    "url": "https://github.com/ricardo-melo-martins/typescript-skeleton-playwright"
   },
   "main": "index.js",
   "scripts": {
@@ -16,31 +16,33 @@
     "start:dev": "set NODE_ENV=development && npx nodemon",
     "start:prod": "set NODE_ENV=production && npm run start",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "compile": "tsc -p ./",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
     "lint:fix": "npm run lint -- --fix",
     "watch": "tsc -watch -p ./",
     "clean": "rimraf dist coverage",
     "prebuild": "npm run lint:fix",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json",
     "build:watch": "tsc -w -p tsconfig.json",
     "build:release": "npm run clean && tsc -p tsconfig.release.json",
-    "prettier": "prettier --config .prettierrc --write ."
+    "prettier": "prettier --config .prettierrc --write .",
+    "test": "playwright test",
+    "test:cov": "npx playwright show-report"
   },
   "devDependencies": {
+    "@playwright/test": "^1.41.2",
     "@types/node": "^20.8.7",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
     "eslint": "^8.42.0",
-    "typescript": "^5.3.2",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "nodemon": "^3.0.1",
+    "prettier": "^3.0.0",
     "rimraf": "^5.0.5",
+    "source-map-support": "^0.5.21",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
-    "prettier": "^3.0.0",
-    "source-map-support": "^0.5.21",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0"
+    "typescript": "^5.3.2"
   },
   "engines": {
     "node": ">=20"
